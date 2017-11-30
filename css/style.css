@@ -48,11 +48,11 @@ header .navbar .navbar-brand a:hover {
 }
 
 
-/* ---------------SECTION--------------*/
+/* -----------------------------SECTION--------------------------------*/
 
 .header-image img {
-    height: 1100px;
-    width: 1500px;
+    height: 100%;
+    width: 100%;
 }
 
 /* --------------------------MAIN CONTENT AREA---------------------------- */
