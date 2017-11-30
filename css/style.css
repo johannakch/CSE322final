@@ -22,7 +22,7 @@ header .navbar-default {
 header .navbar-default .navbar-nav a {
     font-family: 'Raleway', sans-serif;
     /* resizing the fontsize relatively to the default fontsize */
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 400;
     /* fontcolor */
     color: deeppink;
