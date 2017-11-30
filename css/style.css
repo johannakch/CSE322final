@@ -33,10 +33,9 @@ header .navbar .navbar-brand a {
     font-family: 'Abril Fatface', cursive;
     font-size: 3.5rem;
     color: #363636;
-    /*text-shadow: 2px 2px lightgray;*/
 }
 
-.navbar-inverse .navbar-toggle {
+.navbar-default .navbar-toggle {
     /* deleting the border around the "hamburger sign" when in mobile mode */
     border: none;
 }
@@ -58,6 +57,12 @@ header .navbar .navbar-brand a:hover {
     background-size: cover;
     color: #ffffff;
     height: 600px;
+
+}
+
+.header-image img {
+    height: 100%;
+    width: 100%;
 }
 
 /* --------------------------MAIN CONTENT AREA---------------------------- */
@@ -76,4 +81,51 @@ footer {
     padding-bottom: 20px;
     font-family: Raleway, sans-serif;
     text-align: center;
+}
+
+
+/*-------------------------------------- MEDIA QUERIES --------------------------------------*/
+
+/* to override some settings in different views */
+
+/* Large desktops and laptops */
+
+@media (min-width: 1200px) {}
+
+/* Landscape tablets and medium desktops */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* resizing the font size to a smaller fontsize to avoid horizontal scrolling in the iPade view */
+}
+
+/* Portrait tablets and small desktops */
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /* resizing the font size to a smaller fontsize to avoid horizontal scrolling in the iPade view */
+}
+
+/* Landscape phones and portrait tablets */
+
+@media (max-width: 767px) {
+    header .navbar {
+        /* add padding to top and bottom of the navigation */
+        padding: 2px 0;
+    }
+    header .navbar .navbar-brand a {
+        font-size: 1.8rem;
+
+    }
+}
+
+/* Portrait phones and smaller */
+
+@media (max-width: 480px) {
+    header .navbar {
+        /* add padding to top and bottom of the navigation */
+        padding: 2px 0;
+    }
+    header .navbar .navbar-brand a {
+        font-size: 1.8rem;
+
+    }
 }
