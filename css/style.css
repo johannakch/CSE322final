@@ -82,6 +82,11 @@ header .navbar .navbar-brand a:hover {
     padding-top: 20px;
 }
 
+figcaption {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
 
 /*-----------------------FOOTER AREA-------------------------*/
 
