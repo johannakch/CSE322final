@@ -19,6 +19,9 @@
     <!-- Link to my own CSS -->
     <link rel="stylesheet" href="css/style.css">
 
+    <script src="js/ajax.js"></script>
+    <script src="js/parse-response.js"></script>
+
 </head>
 
 <body>
@@ -66,6 +69,7 @@
     <!-- -----------------------MAIN CONTENT AREA------------------------ -->
     <div class="main container-fluid">
         <div class="row">
+
             <div class="col-sm-6 col-sm-offset-3">
                 <h1>About</h1>
             </div>
@@ -75,6 +79,45 @@
             <div class="col-sm-3">
                 <p>I finally made my dream come true and applied for the Study Abroad program of which I am a part now. I really enjoy my time in the US and I'm soaking up everything I can. It hasn't been easy sometimes but it only shaped me and my personality for good.</p>
             </div>
+
+            <div class="col-sm-6 col-sm-offset-3">
+                <h3>Weather US vs. Germany <span class="glyphicon glyphicon-cloud"></span></h3>
+            </div>
+            <div id="container">
+                <div class="col-sm-3 col-sm-offset-3">
+                    <p id="sanbernardino"></p>
+                </div>
+
+                <div class="col-sm-3">
+                    <p id="home"></p>
+                </div>
+
+            </div>
+
+            <!-- Calculation of the Weather of San Bernardino and Wiesbaden (hometown) -->
+            <script>
+                /* global ajax */
+                /* global parseResponse */
+
+                getWeather('San Bernardino', 'sanbernardino');
+                getWeather('Wiesbaden', 'home');
+
+                function getWeather(city_name, element_id) {
+                    var container = document.getElementById('container');
+                    var url = "https://api.openweathermap.org/data/2.5/weather?q=";
+                    var city = city_name;
+                    var apiKey = "45c3028b83d45e07f00213485024bed4";
+                    url += city + "&appid=" + apiKey;
+
+                    ajax(url, function(resp) {
+                        resp = parseResponse(resp, element_id);
+                        document.getElementById(element_id).textContent = resp;
+                    });
+
+                }
+            </script>
+
+
         </div>
     </div>
 
