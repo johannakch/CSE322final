@@ -1,0 +1,147 @@
+/*---------------------------GENERAL------------------------------*/
+
+body {
+    font-family: Helvetica;
+    font-weight: 300;
+}
+
+/*---------------------------HEADER & NAVIGATION------------------------------*/
+
+header .navbar {
+    /* add padding to top and bottom of the navigation */
+    padding: 20px 0;
+}
+
+header .navbar-default {
+    /* deleting the background of the navigaion bar */
+    opacity: 0.8;
+    /* no border at the bottom of the navigation bar */
+    border: none;
+}
+
+header .navbar-default .navbar-nav a {
+    font-family: 'Raleway', sans-serif;
+    /* resizing the fontsize relatively to the default fontsize */
+    font-size: 1.8rem;
+    font-weight: 400;
+    /* fontcolor */
+    color: deeppink;
+    /*text-shadow: 1px 1px lightgray;*/
+}
+
+header .navbar .navbar-brand a {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 3.5rem;
+    color: #363636;
+}
+
+.navbar-default .navbar-toggle {
+    /* deleting the border around the "hamburger sign" when in mobile mode */
+    border: none;
+}
+
+header .navbar-default .navbar-nav a:hover,
+header .navbar .navbar-brand a:hover {
+    /* when hovering over the page links change the color of the font */
+    color: darkgray;
+    text-decoration: none;
+}
+
+
+/* -----------------------------SECTION--------------------------------*/
+
+.header-image img {
+    height: 100%;
+    width: 100%;
+}
+
+/* --------------------------MAIN CONTENT AREA---------------------------- */
+
+.main h1 {
+    font-family: 'Raleway', sans-serif;
+    padding-top: 20px;
+}
+
+.main p {
+    font-family: 'Raleway', sans-serif;
+    padding-top: 20px;
+    font-size: 1.6rem;
+}
+
+.main h4,
+.main h3,
+.main h2 {
+    font-family: 'Raleway', sans-serif;
+    padding-top: 30px;
+}
+
+.main img {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 20px;
+}
+
+figcaption {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
+
+/*-----------------------FOOTER AREA-------------------------*/
+
+footer {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-family: Raleway, sans-serif;
+    text-align: center;
+}
+
+
+/*-------------------------------------- MEDIA QUERIES --------------------------------------*/
+
+/* to override some settings in different views */
+
+/* Large desktops and laptops */
+
+@media (min-width: 1200px) {}
+
+/* Landscape tablets and medium desktops */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* resizing the font size to a smaller fontsize to avoid horizontal scrolling in the iPade view */
+}
+
+/* Portrait tablets and small desktops */
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /* resizing the font size to a smaller fontsize to avoid horizontal scrolling in the iPade view */
+}
+
+/* Landscape phones and portrait tablets */
+
+@media (max-width: 767px) {
+    header .navbar {
+        /* decrease padding at top and bottom of the navigation bar*/
+        padding: 2px 0;
+    }
+    /* decrease font size */
+    header .navbar .navbar-brand a {
+        font-size: 1.8rem;
+
+    }
+}
+
+/* Portrait phones and smaller */
+
+@media (max-width: 480px) {
+    header .navbar {
+        /* decrease padding at top and bottom of the navigation bar*/
+        padding: 2px 0;
+    }
+    /* decrease font size */
+    header .navbar .navbar-brand a {
+        font-size: 1.8rem;
+
+    }
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- for mobile devices to make the content not look too small -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>My California Experience</title>
+
+    <!-- -----------------------LINKS------------------------ -->
+    <!-- including font families -->
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Raleway:100,100i,200,200i,300,300i,400" rel="stylesheet">
+
+    <!-- External link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Link to my own CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/ajax.js"></script>
+    <script src="js/parse-response.js"></script>
+
+</head>
+
+<body>
+
+    <!-- -----------------------HEADER------------------------ -->
+    <header>
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <!--Navbar is always fixed to the top of the page-->
+            <div class="container">
+                <!-- Start Container -->
+                <div class="navbar-header">
+                    <!-- responsive toggle button "hamburger sign" -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="navbar-brand">
+                        <a href="index.html">My California Experience</a>
+                    </div>
+                </div>
+                <!-- navbar-header -->
+                <div class="collapse navbar-collapse" id="collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="index.html">About</a></li>
+                        <li><a href="university.html">University Life</a></li>
+                        <li><a href="hollywood.html">Hollywood</a></li>
+                        <li><a href="highlights.html">Highlights</a></li>
+
+                    </ul>
+                </div>
+                <!-- collapse navbar-collapse -->
+            </div>
+            <!-- End Container -->
+        </nav>
+    </header>
+
+    <!-- -----------------------HEADER IMAGE------------------------ -->
+    <section class="header-image">
+        <img src="images/about/fly.jpg">
+    </section>
+
+    <!-- -----------------------MAIN CONTENT AREA------------------------ -->
+    <div class="main container-fluid">
+        <div class="row">
+
+            <div class="col-sm-8 col-sm-offset-2">
+                <h1>About</h1>
+            </div>
+            <div class="col-sm-4 col-sm-offset-2">
+                <p>Hello. My name is <strong>Johanna</strong>, I am from Germany and I'm studying abroad at Cal State San Bernardino for the Fall Quarter 2017. This Website is going to be a little sneak peak of my personal experience in the United States. I am a Computer Science Major and take mostly Programming Courses and a Design Course. I finally made my dream come true and applied for the Study Abroad program of which I am a part now. </p>
+            </div>
+            <div class="col-sm-4">
+                <p>I really enjoy my time in the US and I'm soaking up everything I can. It hasn't been easy sometimes but it only shaped me and my personality for good. One of the best facts about California is probably the nice weather throughout the whole year. While it is already cold in Germany by October it was nice still lying by the pool in November in California. Below you can see the Weather differences.</p>
+            </div>
+
+            <div class="col-sm-8 col-sm-offset-2">
+                <h3>Weather US vs. Germany <span class="glyphicon glyphicon-cloud"></span></h3>
+
+            </div>
+            <div id="container">
+                <div class="col-sm-4 col-sm-offset-2">
+                    <p id="sanbernardino"></p>
+                </div>
+
+                <div class="col-sm-4">
+                    <p id="home"></p>
+                </div>
+
+            </div>
+
+            <!-- Calculation of the Weather of San Bernardino and Wiesbaden (hometown) -->
+            <script>
+                /* global ajax */
+                /* global parseResponse */
+
+                getWeather('San Bernardino', 'sanbernardino');
+                getWeather('Wiesbaden', 'home');
+
+                function getWeather(city_name, element_id) {
+                    var container = document.getElementById('container');
+                    var url = "https://api.openweathermap.org/data/2.5/weather?q=";
+                    var city = city_name;
+                    var apiKey = "45c3028b83d45e07f00213485024bed4";
+                    url += city + "&appid=" + apiKey;
+
+                    ajax(url, function(resp) {
+                        resp = parseResponse(resp, element_id);
+                        document.getElementById(element_id).textContent = resp;
+                    });
+
+                }
+            </script>
+
+
+        </div>
+    </div>
+
+
+    <!-- -----------------------FOOTER------------------------ -->
+    <footer>
+        <div class="content container-fluid">
+            <!-- Start Container -->
+
+            <p>All contents &copy; 2017. All rights reserved. Site Design by Johanna Koch</p>
+
+        </div>
+        <!-- End Container -->
+    </footer>
+
+    <!-- -----------------------LINKS------------------------ -->
+    <!-- linking to external .js files from jquery and bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
